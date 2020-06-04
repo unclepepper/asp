@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ASP</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+		<div class="head setting">
+			<nav class="">
+				<div class="left-nav"><div class="logo">A<span>S</span>P</div><div class="x"></div></div>
+				<div class="right-nav">
+					<ul>
+						<li><a href="#">Виды работ</a></li>
+						<li><a href="#">О нас</a></li>
+						<li><a href="#">Наши работы</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="wrap setting">	
+		<div class="content">
+			<content class="text">
+				
+			</content>
+		</div>
+	</div>
+	<footer class="footer setting">
+		<div class="footer-content-left">
+			
+				<p>г. Тюмень, ул. Широтная, 172а-154</p>
+				<p>тел.: +7(932)325-85-06</p>
+				<p>e-mail:asp.mail.all@gmail.com</p>
+			
+		</div>
+		<div class="footer-content"><div class="power-hidd"></div></div>
+	</footer>
+		<div class="modal">
+			<div class="modal-left"></div>
+			<div class="modal-right"></div>
+		</div>
+		<div class="power power-green"></div>	
+					
+				
+	
+	<script type="text/javascript">
+		const modalLeft = document.querySelector('.modal-left');
+		const modalRight = document.querySelector('.modal-right');
+		const power = document.querySelector('.power');
+		const powerHidd = document.querySelector('.power-hidd');
+		const modal = document.querySelector('.modal');
+
+	document.addEventListener('DOMContentLoaded', function() {
+    power.addEventListener('click', addClasse);
+    powerHidd.addEventListener('click', removeClasse);
+  });
+
+function addClasse(){
+	if(modalLeft.classList == 'modal-left animation-right'){
+		modalLeft.classList.remove("animation-right");
+		modalRight.classList.remove("animation-right");
+	}
+		
+
+		modalLeft.classList.toggle("animation-left");
+		modalRight.classList.toggle("animation-left");
+	
+		
+	if(power.classList == 'power power-green') {
+
+		power.classList.remove("power-green");
+		
+		setTimeout("powerHidd.classList.toggle('power-red')", 1000);
+		
+		setTimeout("modal.style.visibility = 'hidden'", 1000);
+		
+	}
+		
+}
+
+function removeClasse(){
+		modal.style.visibility = 'visible';
+
+
+		if(modalLeft.classList == 'modal-left animation-left'){
+		modalLeft.classList.remove("animation-left");
+			modalLeft.classList.toggle("animation-right");
+	}
+	if(modalRight.classList == 'modal-right animation-left'){
+			modalRight.classList.toggle("animation-right");
+		modalRight.classList.remove("animation-left");
+	}
+			
+	
+	if(powerHidd.classList == 'power-hidd power-red') {	
+		
+		powerHidd.classList.remove("power-red");
+		setTimeout("power.classList.toggle('power-green')", 1000);
+		
+		
+	}
+
+}
+	</script>
+
+
+</body>
+</html>
